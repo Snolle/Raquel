@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switches de Teclados Mecânicos</title>
+    <style>
+        body {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9e6e6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            
+        }
+        header {
+            background-color: #508dac;
+            color: white;
+            text-align: center;
+            padding: 55px;
+            width: 100%;
+        }
+        nav {
+            background-color: #a6dcef;
+            padding: 0.5rem;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        main {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .switch-container {
+            background-color: #f2b6c1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            text-align: left;
+        }
+         .switch-image {
+            width: 200px;
+            height: 150px;
+            background-color: #974139;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+
+        .switch-description {
+            display: none;
+        }
+
+
+        .switch-container:hover .switch-description {
+            display: block;
+        }
+
+
+        section {
+            background-color: #f2b6c1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+        }
+
+
+        button {
+            background-color: #ff888a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+
+        button:hover {
+            background-color: #ff6f61;
+        }
+
+
+        footer {
+            background-color: #87bdd8;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <h1>Switches de Teclados Mecânicos</h1>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="#rapidez">Mais Rápido</a></li>
+            <li><a href="#barulho">Mais Barulhento</a></li>
+            <li><a href="#popularidade">Mais Popular no Brasil</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="rapidez">
+            <h2>Switch Mais Rápido</h2>
+            <p>Cherry MX Speed: Switch rápido e preciso, ideal para jogos competitivos e que exigem reflexos mais rápidos e menor tempo de resposta.</p>
+            <button onclick="mostrarDetalhes('rapidez')">Mostrar Detalhes</button>
+            <p id="detalhes-rapidez"></p>
+        </section>
+
+
+        <section id="barulho">
+            <h2>Switch Mais Barulhento</h2>
+            <p>Cherry MX Blue: são famosos por seu clique audível e feedback tátil, proporcionando uma experiência tátil e sonora ao digitar.</p>
+            <button onclick="mostrarDetalhes('barulho')">Mostrar Detalhes</button>
+            <p id="detalhes-barulho"></p>
+        </section>
+
+
+        <section id="popularidade">
+            <h2>Switch Popular no Brasil</h2>
+            <p>Cherry MX Red: são amplamente utilizados no Brasil devido à sua resposta linear e sensação suave ao pressionar as teclas, tornando-os ideais para digitação diária.</p>
+            <button onclick="mostrarDetalhes('popularidade')">Mostrar Detalhes</button>
+            <p id="detalhes-popularidade"></p>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2023 Switches de Teclados Mecânicos. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script>
+        function mostrarDetalhes(switchId) {
+            var detalhesId = 'detalhes-' + switchId;
+            var detalhes = document.getElementById(detalhesId);
+            if (detalhes.innerHTML === '') {
+                if (switchId === 'rapidez') {
+                    detalhes.innerHTML = 'Os switches Cherry MX Speed são conhecidos por sua alta velocidade de atuação, gerando apenas 1.2 mm de movimento garante uma resposta imediata e linear, e com espaço total para pressão de 3.4 mm';
+                } else if (switchId === 'barulho') {
+                    detalhes.innerHTML = 'Os switches Cherry MX Red São os mais queridos e famosos entre os jogadores e casuais no brasil. Com toque linear, e tempo de resposta mediano, sendo levemente mais rápido que seu irmão azulado (2.0 mm), porem extremamente mais silencioso em comparação. ideal para uso genérico ou em estação de jogos compartilhada. Espaço total de pressão: 4.0 mm.';
+                } else if (switchId === 'popularidade') {
+                    detalhes.innerHTML = 'Os switches Cherry MX Blue são populares por seu famoso e audível "Click". Seu tempo de resposta, apesar de maior (2.2 mm), ainda assim garante precisão em jogos competitivos, mas exigem maior atenção do jogador, que possivelmente se encontrará distraído com com a orquestra sonora em seu teclado. Espaço total de pressão: 4.0 mm';
+                }
+            } else {
+                detalhes.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
